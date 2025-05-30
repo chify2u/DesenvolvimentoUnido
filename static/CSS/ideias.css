@@ -1,0 +1,122 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    
+  }
+  
+ 
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #007db5, #3fbf7f);
+    color: white;
+  }
+  
+  header .logo img {
+    height: 50px;
+  }
+  
+  header nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  header nav ul li {
+    margin: 0 15px;
+  }
+  
+  header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  header nav ul li a:hover {
+    color: #94d2bd;
+  }
+  
+
+  section {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  section h2 {
+    font-size: 2rem;
+    color: #005f73;
+    margin-bottom: 10px;
+  }
+  
+  section p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+
+
+  footer {
+    background: linear-gradient(90deg, #007db5, #3fbf7f);
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  #ideias-submetidas {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 15px auto;
+    width: 90%;
+    max-width: 600px;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+  }
+  
+  .card-header {
+    background: linear-gradient(90deg, #007db5, #3fbf7f);
+    color: #fff;
+    padding: 15px;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  .card-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .card-content {
+    display: none;
+    padding: 15px;
+    background: #f9f9f9;
+    color: #333;
+    text-align: left;
+  }
+  
+  .card-content p {
+    margin: 10px 0;
+    font-size: 1rem;
+  }

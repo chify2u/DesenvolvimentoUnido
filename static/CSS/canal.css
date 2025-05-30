@@ -1,0 +1,129 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url(/static/imagens/fundoCanal.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #007db5, #3fbf7f);
+  color: white;
+}
+
+header .logo img {
+  height: 50px;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+header nav ul li {
+  margin-left: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #ffdd00;
+}
+
+.form-section {
+  max-width: 1000px; 
+  margin: 60px auto; 
+  padding: 20px;
+  background-color: #ecfdf6;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #006d40;
+  text-align: center;
+}
+
+.form-section h1 {
+  color: #006d40; 
+  margin-bottom: 10px;
+}
+
+.form-section p {
+  margin-bottom: 40px;
+  color: #333333;
+}
+
+.image-placeholder {
+  margin-bottom: 20px;
+}
+
+.form-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 3px solid #c0c0c0; 
+}
+
+.demand-form {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #006d40; 
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #006d40;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #b3b3b3;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.submit-button {
+  background: linear-gradient(90deg, #007db5, #3fbf7f);
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background-color: #ffc107;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background: linear-gradient(90deg, #007db5, #3fbf7f);
+  color: white;
+  font-size: 0.9rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

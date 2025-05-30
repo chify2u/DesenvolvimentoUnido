@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap");
+
+/* cadastro.css */
+body {
+  background-image: url(/static/imagens/backgroundPetrobrasc.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Inter";
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+body h1,
+input[type="date"] {
+  font-family: "Inter", Arial;
+}
+
+.cadastro-form {
+  background-color: rgba(235, 235, 235, 0.9); 
+  border: 2px solid #004e2c; 
+  border-radius: 15px;
+  box-shadow: 0px 3px 6px rgba(235, 235, 235, 0.2);
+  padding: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+form {
+  background-color: #2d00f5;
+  padding: 20px;
+  width: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(10, 7, 134, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #004e2c; 
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #004e2c; 
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 7px;
+  outline: none;
+  font-size: 14px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+  border-color: #ffd700; 
+}
+
+.form-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+input[type="submit"],
+button {
+  background: linear-gradient(90deg, #007db5, #3fbf7f); 
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #ffd700; 
+  color: #004e2c;
+}
+
+.link-ext {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.link-ext a {
+  color: #004e2c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link-ext a:hover {
+  color: #ffd700;
+}

@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+body {
+  background-image: url("/static/imagens/video.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: "Inter", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(235, 235, 235, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 4px 12px #666666;
+  width: 420px;
+  padding: 5px;
+}
+
+.login-box {
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.title {
+  color: #303131;
+  margin-bottom: 10px;
+  font-size: 24px;
+  position: relative;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #f7b600;
+  margin: 8px auto 0;
+}
+
+.subtitle {
+  color: #666666;
+  font-size: 14px;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  text-align: left;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #006634;
+  box-shadow: 0 0 5px rgba(0, 102, 52, 0.2);
+}
+
+button {
+  background: linear-gradient(90deg, #007db5, #3fbf7f);
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.register-link {
+  margin-top: 20px;
+  color: #666666;
+}
+
+.register-link a {
+  color: #f7b600;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+.forget-link a {
+  color: #006634;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .login-box {
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  input {
+    padding: 10px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
+
+
