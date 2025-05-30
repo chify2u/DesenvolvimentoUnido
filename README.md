@@ -26,17 +26,17 @@ Criar um portal que permita:
 ## ⚙ Como Executar o Projeto
 
 1. Clone o repositório:
-   bash
+   ```bash
    git clone https://github.com/seu-repositorio.git
 
 2. Instale as dependências do Python (se aplicável):
-   bash
+   ```bash
    pip install -r requirements.txt
 
 3. Configure as variáveis de ambiente:
-   bash
+   ```bash
    cp .env.example .env
 
 4. - Execute o servidor:
-   bash
+   ```bash
    python app.py
