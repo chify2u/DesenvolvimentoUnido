@@ -1,0 +1,74 @@
+
+
+CREATE TABLE usuarios (
+    id_usuario INT PRIMARY KEY auto_increment,
+    CPF VARCHAR(15) not null unique,
+    Nome CHAR(50) not null,
+    email VARCHAR(50) unique,
+    senha VARCHAR(20)unique ,
+    sexualidade CHAR(30),
+    data_nascimento DATE,
+    estado_civil CHAR(20),
+    escolaridade CHAR(30),
+    fk_acoes_id_acao INT
+);
+
+CREATE TABLE telefone (
+    ddd INT,
+    numero VARCHAR(11) unique,
+    cod_telefone INT PRIMARY KEY auto_increment,
+    fk_usuarios_id_usuario INT
+);
+
+CREATE TABLE endereco (
+    cod_endereco INT PRIMARY KEY auto_increment,
+    cep VARCHAR(10),
+    estado CHAR(50),
+    cidade CHAR(50),
+    bairro CHAR(50),
+    fk_usuarios_id_usuario INT
+);
+
+CREATE TABLE acoes (
+    id_acao INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    descricao VARCHAR(500) NOT NULL,
+    tipo_acao VARCHAR(100) NULL,
+    fk_usuario_id_usuario INT,
+    CONSTRAINT FK_acoes_usuarios FOREIGN KEY (fk_usuario_id_usuario)
+        REFERENCES usuarios (id_usuario)
+        ON DELETE CASCADE
+);
+
+
+ 
+ALTER TABLE usuarios ADD CONSTRAINT FK_usuarios_2
+    FOREIGN KEY (fk_acoes_id_acao)
+    REFERENCES acoes (id_acao)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE telefone ADD CONSTRAINT FK_telefone_2
+    FOREIGN KEY (fk_usuarios_id_usuario)
+    REFERENCES usuarios (id_usuario)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE endereco ADD CONSTRAINT FK_endereco_2
+    FOREIGN KEY (fk_usuarios_id_usuario)
+    REFERENCES usuarios (id_usuario)
+    ON DELETE RESTRICT;
+
+
+CREATE TABLE respostas_socioeconomicas (
+    id_resposta INT PRIMARY KEY AUTO_INCREMENT,
+    fk_usuarios_id_usuario INT,
+    infraestrutura VARCHAR(100),
+    oportunidades_emprego VARCHAR(50),
+    qualidade_ensino VARCHAR(50),
+    acesso_saude VARCHAR(50),
+    internet VARCHAR(50),
+    housing VARCHAR(50),
+    data_resposta TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT FK_respostas_usuarios FOREIGN KEY (fk_usuarios_id_usuario)
+        REFERENCES usuarios(id_usuario)
+        ON DELETE CASCADE
+);
