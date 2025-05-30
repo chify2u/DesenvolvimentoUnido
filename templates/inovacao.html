@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Tela principal do portal Petrobras" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desenvolvimento Unido</title>
+    <link rel="stylesheet" href="/static/CSS/inovacao.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="/static/imagens/Logo-removebg-preview.png" alt="Logo Petrobras" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/index">Início</a></li>
+          
+          <li><a href="/canal">Canal</a></li>
+          <li><a href="/ideias">Ideias</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    <br><br>
+    
+    
+    <div class="cadastro-container">
+      <h2>Cadastre sua ideia</h2>
+
+
+      <form action="/ideias" method="POST">
+        <div class="form-group">
+          <label for="nome-ideia">Nome da Ideia:</label>
+          <input type="text" id="nome-ideia" name="nome-ideia" placeholder="Dê um nome para sua ideia" required />
+        </div>
+        <div class="form-group">
+          <label for="tipo-ideia">Tipo de Ideia:</label>
+          <select id="tipo-ideia" name="tipo-ideia" required>
+            <option value="tecnologia">Tecnologia</option>
+            <option value="educacao">Educação</option>
+            <option value="saude">Saúde</option>
+            <option value="infraestrutura">Infraestrutura</option>
+            <option value="outros">Outros</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="descricao-ideia">Descreva sua ideia:</label>
+          <textarea id="descricao-ideia" name="descricao-ideia" rows="4" placeholder="Escreva sua ideia aqui..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Enviar Ideia</button>
+      </form>
+    </div><br><br><br><br><br><br>
+
+    <footer>
+      <p>&copy; 2024 Desenvolvimento Unido. Todos os direitos reservados.</p>
+    </footer>
+  
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Cadastro 2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro 2</title>
+    <link rel="stylesheet" href="/static/CSS/cadastro.css" />
+  </head>
+
+  <body>
+    <form id="cadastroForm2" method="POST" action="/cadastro2" class="cadastro-form">
+      <h1>Cadastro</h1>
+      <div class="form-wrapper">
+        <section class="form-items">
+          <div class="form-row">
+            <label for="estadoCivil">Estado Civil:</label>
+            <select name="estadoCivil" id="estadoCivil" required>
+              <option value="Casado">Casado</option>
+              <option value="Solteiro">Solteiro</option>
+              <option value="Divorciado">Divorciado</option>
+              <option value="Viúvo">Viúvo</option>
+            </select><br>
+          </div>
+          <div class="form-row">
+            <label for="escolaridade">Escolaridade:</label>
+            <select name="escolaridade" id="escolaridade" required>
+              <option value="Ensino Fundamental">Ensino Fundamental</option>
+              <option value="Ensino Médio">Ensino Médio</option>
+              <option value="Superior">Superior</option>
+              <option value="Pós-graduação">Pós-graduação</option>
+            </select><br>
+          </div>
+          <div class="form-row">
+            <label for="cep">CEP:</label>
+            <input type="text" name="cep" id="cep" placeholder="ex.: 12345-678" maxlength="9" required/><br>
+            
+          </div>
+        </section>
+      </div>
+     
+      <div class="form-row">
+        <label for="bairro">Bairro:</label>
+        <input type="text" id="bairro" name="bairro" placeholder="Bairro" readonly/>
+      </div><br>
+
+      
+      <div class="form-row">
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade" placeholder="Cidade" readonly/>
+      </div> <br>
+
+      
+      <div class="form-row">
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" name="estado" placeholder="Estado" readonly />
+      </div> <br>
+
+      <div class="form-button">
+        <button type="submit">Finalizar Cadastro</button>
+      </div>
+      <div class="link-ext">
+        <p>Já tem uma conta? <a href="/login">Faça login</a></p>
+      </div>
+      
+      
+    </form>
+    <script>
+      document
+        .getElementById("cadastroForm2")
+        .addEventListener("submit", function (event) {
+          var senha = document.querySelector(
+            '#cadastroForm2 input[name="password"]' 
+          ).value;
+          if (senha.length < 6) {
+            alert("A senha deve ter pelo menos 6 caracteres.");
+            event.preventDefault();
+          }
+        });
+
+      
+      (function () {
+        const cep = document.querySelector("input[name=cep]");
+    
+        cep.addEventListener("blur", (e) => {
+          const value = cep.value.replace(/[^0-9]+/, ""); 
+          const url = `https://viacep.com.br/ws/${value}/json/`;
+    
+          if (value.length !== 8) {
+            console.error("CEP inválido");
+            return; 
+          }
+    
+          fetch(url)
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("Erro ao buscar dados do CEP");
+              }
+              return response.json();
+            })
+            .then((json) => {
+              if (json.erro) {
+                console.error("CEP não encontrado");
+                alert("CEP não encontrado.");
+              } else {
+              
+                if (json.localidade && json.uf && json.bairro) {
+                  document.querySelector("input[name=cidade]").value = json.localidade;
+                  document.querySelector("input[name=estado]").value = json.uf;
+                  document.querySelector("input[name=bairro]").value = json.bairro;
+                } else {
+                  console.error("Dados do CEP incompletos");
+                }
+              }
+            })
+            .catch((error) => {
+              console.error("Erro ao buscar CEP:", error); 
+            });
+        });
+      })();
+    </script>
+  </body>
+</html>

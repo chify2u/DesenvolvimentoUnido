@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Tela principal do portal Petrobras" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desenvolvimento Unido</title>
+    <link rel="stylesheet" href="/static/CSS/index.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="/static/imagens/Logo-removebg-preview.png" alt="Petrobras" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/index">Início</a></li>
+          <li><a href="/canal">Canal</a></li>
+          <li><a href="/inovacao">Inovação</a></li>
+          <li><a href="/ideias">ideias</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+
+  <!-- Carrossel -->
+  <section class="carousel">
+    <div class="carousel-container">
+      <div class="carousel-slide">
+        <h2>Comunidade e Petrobras em Parceria!</h2>
+        <em>
+          Analisamos dados socioeconômicos e as
+           vulnerabilidades das comunidades para compreender 
+           suas necessidades mais profundas. Com essas informações, 
+           direcionamos ações estratégicas e iniciativas focadas em melhorar 
+           a qualidade de vida, promover a inclusão social e 
+          impulsionar o desenvolvimento sustentável de forma integrada e eficiente.
+        </em>
+      </div>
+      <div class="carousel-slide">
+        <h2>Uma Solução Para Todos</h2>
+        <em>
+          Este portal é uma iniciativa da Petrobras, com 
+          o objetivo de coletar e analisar dados socioeconômicos das comunidades, 
+          identificando suas necessidades e desafios. Com essas informações, buscamos desenvolver soluções práticas e sustentáveis, contribuindo para o 
+          bem-estar social e promovendo o desenvolvimento local de forma eficiente e responsável.
+        </em>
+      </div>
+      <div class="carousel-slide">
+        <h2>Juntos por um Futuro Melhor!</h2>
+        <em>
+          Este site foi criado como nossa principal ferramenta para ouvir, 
+          compreender e agir em conjunto com as comunidades. Através do compartilhamento 
+          de ideias, desafios e soluções, podemos trabalhar lado a lado para enfrentar os 
+          obstáculos e promover o progresso. Vamos construir, juntos, um futuro mais justo, 
+          sustentável e próspero para todos, com ações que impactem positivamente a vida de cada pessoa.
+        </em>
+      </div>
+    </div>
+    <div class="dots">
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+    </div>
+  </section>
+
+  <section id="conteudo-principal">
+    <div class="container-wrapper">
+      <a href="/canal" class="container-link">
+        <div class="container">
+          <section id="canal">
+            <h2>Canal de Coleta de Dados</h2>
+            <p>
+              Este canal foi criado para coletar dados socioeconômicos dos usuários, com o objetivo de 
+              identificar as principais dificuldades e necessidades da comunidade. A partir dessas informações, 
+              poderemos desenvolver soluções eficazes e direcionadas, visando melhorar a qualidade de vida local
+              e promover um desenvolvimento mais sustentável e inclusivo para todos.
+            </p>
+          </section>
+        </div>
+      </a>
+    </div>
+  </section>
+  <div class="container-wrapper">
+    <a href="/inovacao" class="container-link">
+      <div class="container">
+      <section id="inovacao">
+        <h2>Inovação</h2>
+        <p>
+          A área de inovação é um espaço dedicado para que os usuários possam cadastrar
+          ideias e soluções que promovam o bem-estar social e econômico da comunidade.
+          Aqui, você pode contribuir diretamente para o desenvolvimento de projetos
+          transformadores.
+        </p>
+      </section>
+    </div>
+  </section><br><br>
+  <footer>
+    <p>&copy; 2024 Desenvolvimento Unido. Todos os direitos reservados.</p>
+  </footer>
+
+    <script>
+      let currentSlide = 0;
+
+function showSlide(index) {
+  const slides = document.querySelectorAll(".carousel-slide");
+  const dots = document.querySelectorAll(".dots span");
+
+
+  if (index >= slides.length) {
+    currentSlide = 0;
+  } else if (index < 0) {
+    currentSlide = slides.length - 1;
+  } else {
+    currentSlide = index;
+  }
+
+
+  const container = document.querySelector(".carousel-container");
+  container.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === currentSlide);
+  });
+}
+
+function nextSlide() {
+  showSlide(currentSlide + 1);
+}
+
+function prevSlide() {
+  showSlide(currentSlide - 1);
+}
+
+
+setInterval(() => {
+  nextSlide();
+}, 5000);
+
+
+document.querySelectorAll(".dots span").forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    showSlide(index);
+  });
+});
+
+    </script>
+  </body>
+</html>

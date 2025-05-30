@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/CSS/canal.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="/static/imagens/Logo-removebg-preview.png" alt="Petrobras" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/index">Início</a></li>
+          <li><a href="/inovacao">Inovação</a></li>
+          <li><a href="/ideias">Ideias</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="form-section">
+        <h1 style="font-size: 38px; color: #006d40">Canal de Comunicação</h1>
+
+        <p style="font-size: 22px; color: #686868">
+          Por favor, responda às perguntas abaixo para ajudar a entender as
+          principais demandas socioeconômicas da sua comunidade. Suas respostas
+          são muito importantes para nós.
+        </p>
+
+        <div class="image-placeholder">
+          <img
+            src="/static/imagens/menino.png"
+            alt="Imagem ilustrativa"
+            class="form-image"
+          />
+        </div>
+
+        <form class="demand-form" method="POST">
+          
+          <div class="form-group">
+            <label for="community-needs">
+              1. Quais são as principais necessidades da sua comunidade em termos de infraestrutura? (Ex: saneamento, energia, estradas)
+            </label>
+            <select id="community-needs" name="community-needs">
+              <option value="saneamento">Saneamento Básico</option>
+              <option value="energia">Energia Elétrica</option>
+              <option value="transporte">Transporte Público</option>
+              <option value="estradas">Manutenção de Estradas</option>
+              <option value="outros">Outros</option>
+            </select>
+          </div>
+          
+        
+          <div class="form-group">
+            <label for="employment">
+              2. Como você avalia as oportunidades de emprego em sua comunidade?
+            </label>
+            <select id="employment" name="employment">
+              <option value="muito-bom">Muito Bom</option>
+              <option value="bom">Bom</option>
+              <option value="razoavel">Razoável</option>
+              <option value="ruim">Ruim</option>
+              <option value="muito-ruim">Muito Ruim</option>
+            </select>
+          </div>
+
+          
+          <div class="form-group">
+            <label for="education">
+              3. A qualidade do ensino na sua comunidade atende às necessidades dos moradores?
+            </label>
+            <select id="education" name="education">
+              <option value="sim">Sim</option>
+              <option value="parcialmente">Parcialmente</option>
+              <option value="nao">Não</option>
+            </select>
+          </div>
+
+          
+          <div class="form-group">
+            <label for="healthcare">
+              4. Qual a sua opinião sobre o acesso aos serviços de saúde na sua região?
+            </label>
+            <select id="healthcare" name="healthcare">
+              <option value="excelente">Excelente</option>
+              <option value="bom">Bom</option>
+              <option value="regular">Regular</option>
+              <option value="ruim">Ruim</option>
+              <option value="muito-ruim">Muito Ruim</option>
+            </select>
+          </div>
+
+        
+          <div class="form-group">
+            <label for="internet">
+              5. Qual é a qualidade do acesso à internet na sua comunidade?
+            </label>
+            <select id="internet" name="internet">
+              <option value="excelente">Excelente</option>
+              <option value="bom">Bom</option>
+              <option value="regular">Regular</option>
+              <option value="ruim">Ruim</option>
+              <option value="muito-ruim">Muito Ruim</option>
+            </select>
+          </div>
+
+          
+          <div class="form-group">
+            <label for="housing">
+              6. Como você classifica as condições de moradia na sua comunidade?
+            </label>
+            <select id="housing" name="housing">
+              <option value="boa">Boa</option>
+              <option value="razoavel">Razoável</option>
+              <option value="ruim">Ruim</option>
+              <option value="muito-ruim">Muito Ruim</option>
+            </select>
+          </div>
+             
+
+          <button type="submit" class="submit-button">Enviar Respostas</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Desenvolvimento Unido. Todos os direitos reservados.</p>
+    </footer>
+  </body>
+</html>
